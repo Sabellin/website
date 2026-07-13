@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sabellin — Meaningful connections, worldwide</title>
+<meta name="description" content="Sabellin is an international dating platform by Sabellin, LLC. Coming soon to the App Store.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1c1520;
+    --plum: #2e1f33;
+    --cream: #f6f1e9;
+    --rose: #c98a7d;
+    --rose-soft: #e3b8ae;
+    --muted: #a89aa8;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    font-family: 'Jost', system-ui, sans-serif;
+    font-weight: 300;
+    background: radial-gradient(120% 140% at 50% 0%, var(--plum) 0%, var(--ink) 70%);
+    color: var(--cream);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 3rem 1.5rem;
+  }
+  .mark {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.2rem, 9vw, 5.5rem);
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    line-height: 1.05;
+  }
+  .mark .dot {
+    color: var(--rose);
+  }
+  .tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(1.25rem, 3.2vw, 1.7rem);
+    color: var(--rose-soft);
+    margin-top: 1.1rem;
+  }
+  .rule {
+    width: 56px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--rose), transparent);
+    margin: 2.2rem auto;
+  }
+  .about {
+    max-width: 34rem;
+    font-size: 1.05rem;
+    font-weight: 300;
+    line-height: 1.75;
+    letter-spacing: 0.015em;
+    color: #d9d0dc;
+  }
+  .soon {
+    margin-top: 2.4rem;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .contact {
+    margin-top: 2.6rem;
+    font-size: 1rem;
+    letter-spacing: 0.03em;
+  }
+  .contact a {
+    color: var(--cream);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rose);
+    padding-bottom: 2px;
+    transition: color 0.25s ease, border-color 0.25s ease;
+  }
+  .contact a:hover,
+  .contact a:focus-visible {
+    color: var(--rose-soft);
+    border-color: var(--rose-soft);
+  }
+  .contact a:focus-visible {
+    outline: 2px solid var(--rose);
+    outline-offset: 4px;
+    border-radius: 2px;
+  }
+  footer {
+    padding: 2rem 1.5rem 2.4rem;
+    text-align: center;
+    font-size: 0.82rem;
+    font-weight: 300;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    line-height: 1.9;
+  }
+  footer .legal-name {
+    color: #cfc3d1;
+    font-weight: 400;
+  }
+</style>
+</head>
+<body>
+  <main>
+    <h1 class="mark">Sabellin<span class="dot">.</span></h1>
+    <p class="tagline">Meaningful connections, worldwide.</p>
+    <div class="rule" aria-hidden="true"></div>
+    <p class="about">
+      Sabellin is an international dating platform built around genuine conversations
+      — designed for people, across borders, who value quality over quantity.
+    </p>
+    <p class="soon">Coming soon to the App&nbsp;Store</p>
+    <p class="contact">
+      <a href="mailto:contact@sabellin.com">contact@sabellin.com</a>
+    </p>
+  </main>
+  <footer>
+    <span class="legal-name">&copy; 2026 Sabellin, LLC</span><br>
+    1111B South Governors Ave, STE 91897, Dover, DE 19904, United States<br>
+    Privacy inquiries: privacy@sabellin.com
+  </footer>
+</body>
+</html>
