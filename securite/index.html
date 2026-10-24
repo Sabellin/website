@@ -4,62 +4,90 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer">
-<title>Sabellin – Sécurité du compte · Account security</title>
+<title>Sabellin — Sécurité du compte · Account security</title>
 <style>
-  body { font-family: Arial, Helvetica, sans-serif; max-width: 680px; margin: 0 auto; padding: 24px 16px; color: #1a1a1a; background: #fff; line-height: 1.6; }
-  h1 { font-size: 24px; margin-bottom: 8px; }
-  h2 { font-size: 19px; }
-  nav a { margin-right: 14px; color: #1a1a1a; }
-  section { border-top: 1px solid #e5e5e5; margin-top: 28px; padding-top: 8px; }
-  li { margin-bottom: 10px; }
-  .rappel { color: #555; font-size: 14px; }
-  footer { margin-top: 40px; color: #888; font-size: 13px; }
+  @font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 500; font-display: swap; src: url(/fonts/cormorant-garamond-latin-500-normal.woff2) format('woff2'); }
+  @font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 600; font-display: swap; src: url(/fonts/cormorant-garamond-latin-600-normal.woff2) format('woff2'); }
+  @font-face { font-family: 'Cormorant Garamond'; font-style: italic; font-weight: 500; font-display: swap; src: url(/fonts/cormorant-garamond-latin-500-italic.woff2) format('woff2'); }
+  @font-face { font-family: 'Jost'; font-style: normal; font-weight: 300; font-display: swap; src: url(/fonts/jost-latin-300-normal.woff2) format('woff2'); }
+  @font-face { font-family: 'Jost'; font-style: normal; font-weight: 400; font-display: swap; src: url(/fonts/jost-latin-400-normal.woff2) format('woff2'); }
+  @font-face { font-family: 'Jost'; font-style: normal; font-weight: 500; font-display: swap; src: url(/fonts/jost-latin-500-normal.woff2) format('woff2'); }
+  :root { --ink: #1c1520; --plum: #2e1f33; --cream: #f6f1e9; --rose: #c98a7d; --rose-soft: #e3b8ae; --muted: #a89aa8; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Jost', system-ui, sans-serif; font-weight: 300; background: radial-gradient(120% 140% at 50% 0%, var(--plum) 0%, var(--ink) 70%); background-attachment: fixed; color: var(--cream); min-height: 100vh; display: flex; flex-direction: column; }
+  main { flex: 1; width: 100%; max-width: 40rem; margin: 0 auto; padding: 3rem 1.5rem; }
+  .mark { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.4rem, 7vw, 3.4rem); font-weight: 500; letter-spacing: 0.06em; line-height: 1.05; text-align: center; }
+  .mark a { color: var(--cream); text-decoration: none; }
+  .mark .dot { color: var(--rose); }
+  .tagline { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.35rem; color: var(--rose-soft); text-align: center; margin-top: 0.6rem; }
+  .rule { width: 56px; height: 1px; background: linear-gradient(90deg, transparent, var(--rose), transparent); margin: 2rem auto; }
+  nav { text-align: center; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.32em; text-transform: uppercase; line-height: 2.2; }
+  nav a { color: var(--muted); text-decoration: none; margin: 0 0.6rem; }
+  nav a:hover, nav a:focus-visible { color: var(--rose-soft); }
+  section { margin-top: 3rem; scroll-margin-top: 1.5rem; }
+  h2 { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 1.7rem; line-height: 1.25; margin-bottom: 1.2rem; }
+  ol { padding-left: 1.3rem; }
+  li { font-size: 1.05rem; line-height: 1.75; letter-spacing: 0.015em; color: #d9d0dc; margin-bottom: 0.9rem; }
+  li::marker { color: var(--rose); }
+  strong { font-weight: 500; color: var(--cream); }
+  a.mail { color: var(--cream); text-decoration: none; border-bottom: 1px solid var(--rose); padding-bottom: 1px; }
+  a.mail:hover, a.mail:focus-visible { color: var(--rose-soft); border-color: var(--rose-soft); }
+  .rappel { margin-top: 1rem; font-size: 0.9rem; letter-spacing: 0.02em; color: var(--muted); }
+  footer { padding: 2rem 1.5rem 2.4rem; text-align: center; font-size: 0.82rem; font-weight: 300; letter-spacing: 0.04em; color: var(--muted); line-height: 1.9; }
+  footer .legal-name { color: #cfc3d1; font-weight: 400; }
 </style>
 </head>
 <body>
-<h1>Sabellin</h1>
-<nav><a href="#fr">Français</a> <a href="#en">English</a> <a href="#es">Español</a> <a href="#pt-BR">Português</a></nav>
+  <main>
+    <h1 class="mark"><a href="/">Sabellin<span class="dot">.</span></a></h1>
+    <p class="tagline">Meaningful connections, worldwide.</p>
+    <div class="rule" aria-hidden="true"></div>
+    <nav><a href="#fr">Français</a> <a href="#en">English</a> <a href="#es">Español</a> <a href="#pt-BR">Português</a></nav>
 
-<section id="fr" lang="fr">
-<h2>Votre compte Sabellin a été modifié sans vous ?</h2>
-<ol>
-<li><strong>Reprenez la main tout de suite.</strong> Dans l’application, sur l’écran de connexion, touchez « Mot de passe oublié ? » et choisissez un nouveau mot de passe. Tous les appareils connectés à votre compte seront déconnectés.</li>
-<li><strong>Sécurisez votre boîte e-mail.</strong> Changez le mot de passe de votre messagerie et activez la validation en deux étapes. Les codes Sabellin sont envoyés à cette adresse : qui contrôle votre boîte mail peut contrôler votre compte.</li>
-<li><strong>Contactez-nous</strong> à <a href="mailto:support@sabellin.com">support@sabellin.com</a>, en indiquant l’adresse e-mail de votre compte Sabellin.</li>
-</ol>
-<p class="rappel">Sabellin ne vous demandera jamais votre mot de passe ni un code reçu par e-mail.</p>
-</section>
+    <section id="fr" lang="fr">
+      <h2>Votre compte Sabellin a été modifié sans vous ?</h2>
+      <ol>
+        <li><strong>Reprenez la main tout de suite.</strong> Dans l’application, sur l’écran de connexion, touchez « Mot de passe oublié ? » et choisissez un nouveau mot de passe. Tous les appareils connectés à votre compte seront déconnectés.</li>
+        <li><strong>Sécurisez votre boîte e-mail.</strong> Changez le mot de passe de votre messagerie et activez la validation en deux étapes. Les codes Sabellin sont envoyés à cette adresse : qui contrôle votre boîte mail peut contrôler votre compte.</li>
+        <li><strong>Contactez-nous</strong> à <a class="mail" href="mailto:support@sabellin.com">support@sabellin.com</a>, en indiquant l’adresse e-mail de votre compte Sabellin.</li>
+      </ol>
+      <p class="rappel">Sabellin ne vous demandera jamais votre mot de passe ni un code reçu par e-mail.</p>
+    </section>
 
-<section id="en" lang="en">
-<h2>Was your Sabellin account changed without you?</h2>
-<ol>
-<li><strong>Take back control right away.</strong> In the app, on the sign-in screen, tap “Forgot password?” and choose a new password. All devices signed in to your account will be signed out.</li>
-<li><strong>Secure your email inbox.</strong> Change your email password and turn on two-step verification. Sabellin codes are sent to this address: whoever controls your inbox can control your account.</li>
-<li><strong>Contact us</strong> at <a href="mailto:support@sabellin.com">support@sabellin.com</a>, giving the email address of your Sabellin account.</li>
-</ol>
-<p class="rappel">Sabellin will never ask for your password or for a code received by email.</p>
-</section>
+    <section id="en" lang="en">
+      <h2>Was your Sabellin account changed without you?</h2>
+      <ol>
+        <li><strong>Take back control right away.</strong> In the app, on the sign-in screen, tap “Forgot password?” and choose a new password. All devices signed in to your account will be signed out.</li>
+        <li><strong>Secure your email inbox.</strong> Change your email password and turn on two-step verification. Sabellin codes are sent to this address: whoever controls your inbox can control your account.</li>
+        <li><strong>Contact us</strong> at <a class="mail" href="mailto:support@sabellin.com">support@sabellin.com</a>, giving the email address of your Sabellin account.</li>
+      </ol>
+      <p class="rappel">Sabellin will never ask for your password or for a code received by email.</p>
+    </section>
 
-<section id="es" lang="es">
-<h2>¿Han cambiado tu cuenta de Sabellin sin que lo sepas?</h2>
-<ol>
-<li><strong>Recupera el control ahora mismo.</strong> En la aplicación, en la pantalla de inicio de sesión, toca «¿Olvidaste tu contraseña?» y elige una nueva contraseña. Se cerrará la sesión en todos los dispositivos conectados a tu cuenta.</li>
-<li><strong>Protege tu correo.</strong> Cambia la contraseña de tu correo electrónico y activa la verificación en dos pasos. Los códigos de Sabellin se envían a esa dirección: quien controla tu correo puede controlar tu cuenta.</li>
-<li><strong>Escríbenos</strong> a <a href="mailto:support@sabellin.com">support@sabellin.com</a>, indicando el correo de tu cuenta de Sabellin.</li>
-</ol>
-<p class="rappel">Sabellin nunca te pedirá tu contraseña ni un código recibido por correo.</p>
-</section>
+    <section id="es" lang="es">
+      <h2>¿Han cambiado tu cuenta de Sabellin sin que lo sepas?</h2>
+      <ol>
+        <li><strong>Recupera el control ahora mismo.</strong> En la aplicación, en la pantalla de inicio de sesión, toca «¿Olvidaste tu contraseña?» y elige una nueva contraseña. Se cerrará la sesión en todos los dispositivos conectados a tu cuenta.</li>
+        <li><strong>Protege tu correo.</strong> Cambia la contraseña de tu correo electrónico y activa la verificación en dos pasos. Los códigos de Sabellin se envían a esa dirección: quien controla tu correo puede controlar tu cuenta.</li>
+        <li><strong>Escríbenos</strong> a <a class="mail" href="mailto:support@sabellin.com">support@sabellin.com</a>, indicando el correo de tu cuenta de Sabellin.</li>
+      </ol>
+      <p class="rappel">Sabellin nunca te pedirá tu contraseña ni un código recibido por correo.</p>
+    </section>
 
-<section id="pt-BR" lang="pt-BR">
-<h2>Sua conta Sabellin foi alterada sem você saber?</h2>
-<ol>
-<li><strong>Retome o controle agora.</strong> No aplicativo, na tela de login, toque em “Esqueceu a senha?” e escolha uma nova senha. Todos os aparelhos conectados à sua conta serão desconectados.</li>
-<li><strong>Proteja seu e-mail.</strong> Troque a senha do seu e-mail e ative a verificação em duas etapas. Os códigos do Sabellin são enviados para esse endereço: quem controla seu e-mail pode controlar sua conta.</li>
-<li><strong>Fale conosco</strong> em <a href="mailto:support@sabellin.com">support@sabellin.com</a>, informando o e-mail da sua conta Sabellin.</li>
-</ol>
-<p class="rappel">O Sabellin nunca vai pedir sua senha nem um código recebido por e-mail.</p>
-</section>
-
-<footer>© 2026 Sabellin, LLC</footer>
+    <section id="pt-BR" lang="pt-BR">
+      <h2>Sua conta Sabellin foi alterada sem você saber?</h2>
+      <ol>
+        <li><strong>Retome o controle agora.</strong> No aplicativo, na tela de login, toque em “Esqueceu a senha?” e escolha uma nova senha. Todos os aparelhos conectados à sua conta serão desconectados.</li>
+        <li><strong>Proteja seu e-mail.</strong> Troque a senha do seu e-mail e ative a verificação em duas etapas. Os códigos do Sabellin são enviados para esse endereço: quem controla seu e-mail pode controlar sua conta.</li>
+        <li><strong>Fale conosco</strong> em <a class="mail" href="mailto:support@sabellin.com">support@sabellin.com</a>, informando o e-mail da sua conta Sabellin.</li>
+      </ol>
+      <p class="rappel">O Sabellin nunca vai pedir sua senha nem um código recebido por e-mail.</p>
+    </section>
+  </main>
+  <footer>
+    <span class="legal-name">&copy; 2026 Sabellin, LLC</span><br>
+    1111B South Governors Ave, STE 91897, Dover, DE 19904, United States<br>
+    Privacy inquiries: privacy@sabellin.com
+  </footer>
 </body>
 </html>
