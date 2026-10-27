@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; font-src 'self'; connect-src https://api.sabellin.com; base-uri 'none'; form-action 'none'">
+<title>Sabellin — Verrouiller le compte · Lock account</title>
+<style>
+  @font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 500; font-display: swap; src: url(/fonts/cormorant-garamond-latin-500-normal.woff2) format('woff2'); }
+  @font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 600; font-display: swap; src: url(/fonts/cormorant-garamond-latin-600-normal.woff2) format('woff2'); }
+  @font-face { font-family: 'Cormorant Garamond'; font-style: italic; font-weight: 500; font-display: swap; src: url(/fonts/cormorant-garamond-latin-500-italic.woff2) format('woff2'); }
+  @font-face { font-family: 'Jost'; font-style: normal; font-weight: 300; font-display: swap; src: url(/fonts/jost-latin-300-normal.woff2) format('woff2'); }
+  @font-face { font-family: 'Jost'; font-style: normal; font-weight: 400; font-display: swap; src: url(/fonts/jost-latin-400-normal.woff2) format('woff2'); }
+  @font-face { font-family: 'Jost'; font-style: normal; font-weight: 500; font-display: swap; src: url(/fonts/jost-latin-500-normal.woff2) format('woff2'); }
+  :root { --ink: #1c1520; --plum: #2e1f33; --cream: #f6f1e9; --rose: #c98a7d; --rose-soft: #e3b8ae; --muted: #a89aa8; --danger: #e07a6f; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Jost', system-ui, sans-serif; font-weight: 300; background: radial-gradient(120% 140% at 50% 0%, var(--plum) 0%, var(--ink) 70%); background-attachment: fixed; color: var(--cream); min-height: 100vh; display: flex; flex-direction: column; }
+  main { flex: 1; width: 100%; max-width: 40rem; margin: 0 auto; padding: 3rem 1.5rem; }
+  .mark { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.4rem, 7vw, 3.4rem); font-weight: 500; letter-spacing: 0.06em; line-height: 1.05; text-align: center; }
+  .mark a { color: var(--cream); text-decoration: none; }
+  .mark .dot { color: var(--rose); }
+  .tagline { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.35rem; color: var(--rose-soft); text-align: center; margin-top: 0.6rem; }
+  .rule { width: 56px; height: 1px; background: linear-gradient(90deg, transparent, var(--rose), transparent); margin: 2rem auto; }
+  nav { text-align: center; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.32em; text-transform: uppercase; line-height: 2.2; }
+  nav button { font: inherit; letter-spacing: inherit; text-transform: inherit; background: none; border: 0; padding: 0; cursor: pointer; color: var(--muted); margin: 0 0.6rem; }
+  nav button:hover, nav button:focus-visible { color: var(--rose-soft); }
+  nav button[aria-pressed="true"] { color: var(--cream); }
+  section { margin-top: 3rem; }
+  h2 { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 1.7rem; line-height: 1.25; margin-bottom: 1.2rem; }
+  .texte { font-size: 1.05rem; line-height: 1.75; letter-spacing: 0.015em; color: #d9d0dc; margin-bottom: 0.9rem; }
+  noscript .texte { margin-top: 3rem; }
+  noscript .texte + .texte { margin-top: 0; }
+  a.mail { color: var(--cream); text-decoration: none; border-bottom: 1px solid var(--rose); padding-bottom: 1px; }
+  a.mail:hover, a.mail:focus-visible { color: var(--rose-soft); border-color: var(--rose-soft); }
+  .action { text-align: center; margin: 2rem 0 1.2rem; }
+  .danger { font-family: 'Jost', system-ui, sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.32em; text-transform: uppercase; color: var(--cream); background: transparent; border: 1px solid var(--danger); padding: 0.9rem 1.6rem; cursor: pointer; }
+  .danger:hover, .danger:focus-visible { background: var(--danger); color: var(--ink); }
+  .danger:disabled { opacity: 0.5; cursor: not-allowed; }
+  .danger:disabled:hover { background: transparent; color: var(--cream); }
+  .alerte { color: var(--rose-soft); }
+  .rappel { margin-top: 1rem; font-size: 0.9rem; letter-spacing: 0.02em; color: var(--muted); }
+  footer { padding: 2rem 1.5rem 2.4rem; text-align: center; font-size: 0.82rem; font-weight: 300; letter-spacing: 0.04em; color: var(--muted); line-height: 1.9; }
+  footer .legal-name { color: #cfc3d1; font-weight: 400; }
+</style>
+</head>
+<body>
+  <main>
+    <h1 class="mark"><a href="/">Sabellin<span class="dot">.</span></a></h1>
+    <p class="tagline">Meaningful connections, worldwide.</p>
+    <div class="rule" aria-hidden="true"></div>
+    <nav id="langues" hidden><button type="button" data-lang="fr">Français</button> <button type="button" data-lang="en">English</button> <button type="button" data-lang="es">Español</button> <button type="button" data-lang="pt-BR">Português</button></nav>
+
+    <noscript>
+      <p class="texte" lang="fr">Cette page a besoin de JavaScript pour fonctionner. Activez-le, ou écrivez à <a class="mail" href="mailto:support@sabellin.com">support@sabellin.com</a>.</p>
+      <p class="texte" lang="en">This page needs JavaScript to work. Turn it on, or write to <a class="mail" href="mailto:support@sabellin.com">support@sabellin.com</a>.</p>
+      <p class="texte" lang="es">Esta página necesita JavaScript para funcionar. Actívalo o escribe a <a class="mail" href="mailto:support@sabellin.com">support@sabellin.com</a>.</p>
+      <p class="texte" lang="pt-BR">Esta página precisa de JavaScript para funcionar. Ative-o ou escreva para <a class="mail" href="mailto:support@sabellin.com">support@sabellin.com</a>.</p>
+    </noscript>
+
+    <section id="ecran" aria-live="polite"></section>
+  </main>
+  <footer>
+    <span class="legal-name">&copy; 2026 Sabellin, LLC</span><br>
+    1111B South Governors Ave, STE 91897, Dover, DE 19904, United States<br>
+    Privacy inquiries: privacy@sabellin.com
+  </footer>
+<script>
+(function () {
+  "use strict";
+
+  var TEXTES = {
+    "fr": {
+      titre: "Verrouiller votre compte Sabellin",
+      explication: "Utilisez ce bouton si quelqu’un d’autre a accès à votre compte. Une fois verrouillé, plus personne ne pourra s’y connecter, vous compris, et toutes les sessions ouvertes seront coupées. Le déverrouillage passera par notre support, avec une vérification de votre identité.",
+      bouton: "Verrouiller mon compte",
+      enCours: "Verrouillage en cours…",
+      reussiteTitre: "Votre compte est verrouillé.",
+      reussiteTexte: "Plus personne ne peut s’y connecter. Pour le récupérer, écrivez à support@sabellin.com en indiquant l’adresse e-mail de votre compte : nous vérifierons votre identité avant de le débloquer. Pensez aussi à sécuriser votre boîte e-mail (nouveau mot de passe, validation en deux étapes).",
+      invalide: "Ce lien n’est pas valable : il est incomplet, il a expiré (7 jours) ou il a déjà servi. Si vous avez déjà verrouillé votre compte, il reste verrouillé. Sinon, écrivez à support@sabellin.com.",
+      tropDeTentatives: "Trop de tentatives depuis cette connexion. Réessayez dans une heure.",
+      indisponible: "Le verrouillage n’a pas pu être fait pour l’instant. Votre lien reste valable : réessayez dans quelques minutes.",
+      rappel: "Sabellin ne vous demandera jamais votre mot de passe ni un code reçu par e-mail."
+    },
+    "en": {
+      titre: "Lock your Sabellin account",
+      explication: "Use this button if someone else has access to your account. Once locked, no one will be able to sign in, including you, and all open sessions will be ended. Unlocking will go through our support team, with an identity check.",
+      bouton: "Lock my account",
+      enCours: "Locking…",
+      reussiteTitre: "Your account is locked.",
+      reussiteTexte: "No one can sign in to it anymore. To recover it, write to support@sabellin.com with your account’s email address: we will verify your identity before unlocking it. Also remember to secure your email inbox (new password, two-step verification).",
+      invalide: "This link is not valid: it is incomplete, has expired (7 days) or has already been used. If you have already locked your account, it stays locked. Otherwise, write to support@sabellin.com.",
+      tropDeTentatives: "Too many attempts from this connection. Try again in an hour.",
+      indisponible: "Your account could not be locked right now. Your link is still valid: try again in a few minutes.",
+      rappel: "Sabellin will never ask for your password or for a code received by email."
+    },
+    "es": {
+      titre: "Bloquear tu cuenta de Sabellin",
+      explication: "Usa este botón si otra persona tiene acceso a tu cuenta. Una vez bloqueada, nadie podrá iniciar sesión, ni siquiera tú, y se cerrarán todas las sesiones abiertas. Para desbloquearla tendrás que pasar por nuestro equipo de soporte, con una verificación de identidad.",
+      bouton: "Bloquear mi cuenta",
+      enCours: "Bloqueando…",
+      reussiteTitre: "Tu cuenta está bloqueada.",
+      reussiteTexte: "Ya nadie puede iniciar sesión en ella. Para recuperarla, escribe a support@sabellin.com indicando el correo de tu cuenta: verificaremos tu identidad antes de desbloquearla. Protege también tu correo (nueva contraseña, verificación en dos pasos).",
+      invalide: "Este enlace no es válido: está incompleto, ha caducado (7 días) o ya se ha usado. Si ya bloqueaste tu cuenta, sigue bloqueada. Si no, escribe a support@sabellin.com.",
+      tropDeTentatives: "Demasiados intentos desde esta conexión. Vuelve a intentarlo dentro de una hora.",
+      indisponible: "No se ha podido bloquear la cuenta por ahora. Tu enlace sigue siendo válido: vuelve a intentarlo dentro de unos minutos.",
+      rappel: "Sabellin nunca te pedirá tu contraseña ni un código recibido por correo."
+    },
+    "pt-BR": {
+      titre: "Bloquear sua conta Sabellin",
+      explication: "Use este botão se outra pessoa tiver acesso à sua conta. Depois de bloqueada, ninguém conseguirá entrar, nem mesmo você, e todas as sessões abertas serão encerradas. Para desbloqueá-la, será preciso falar com nossa equipe de suporte, com uma verificação de identidade.",
+      bouton: "Bloquear minha conta",
+      enCours: "Bloqueando…",
+      reussiteTitre: "Sua conta está bloqueada.",
+      reussiteTexte: "Ninguém mais consegue entrar nela. Para recuperá-la, escreva para support@sabellin.com informando o e-mail da sua conta: vamos verificar sua identidade antes de desbloqueá-la. Proteja também seu e-mail (nova senha, verificação em duas etapas).",
+      invalide: "Este link não é válido: está incompleto, expirou (7 dias) ou já foi usado. Se você já bloqueou sua conta, ela continua bloqueada. Caso contrário, escreva para support@sabellin.com.",
+      tropDeTentatives: "Muitas tentativas a partir desta conexão. Tente de novo daqui a uma hora.",
+      indisponible: "Não foi possível bloquear a conta agora. Seu link continua válido: tente de novo em alguns minutos.",
+      rappel: "O Sabellin nunca vai pedir sua senha nem um código recebido por e-mail."
+    }
+  };
+
+  var ADRESSE = "support@sabellin.com";
+
+  // Lecture du fragment : "langue:jeton", coupe au premier ":".
+  var fragment = location.hash.replace(/^#/, "");
+  var deuxPoints = fragment.indexOf(":");
+  var langue = deuxPoints === -1 ? fragment : fragment.slice(0, deuxPoints);
+  var brut = deuxPoints === -1 ? "" : fragment.slice(deuxPoints + 1);
+  if (!Object.prototype.hasOwnProperty.call(TEXTES, langue)) langue = "en";
+  var jeton = /^[A-Za-z0-9_-]{43}$/.test(brut) ? brut : "";
+  fragment = brut = "";
+  history.replaceState(null, "", location.pathname + location.search);
+
+  // Etats : "confirmation", "invalide", "tropDeTentatives", "reussite".
+  var etat = jeton ? "confirmation" : "invalide";
+  var enCours = false;
+  var indisponible = false;
+
+  var ecran = document.getElementById("ecran");
+  var nav = document.getElementById("langues");
+
+  // Paragraphe dont chaque support@sabellin.com devient un lien mailto.
+  function paragraphe(texte, classe) {
+    var p = document.createElement("p");
+    p.className = classe;
+    var morceaux = texte.split(ADRESSE);
+    for (var i = 0; i < morceaux.length; i++) {
+      if (i > 0) {
+        var a = document.createElement("a");
+        a.className = "mail";
+        a.href = "mailto:" + ADRESSE;
+        a.textContent = ADRESSE;
+        p.appendChild(a);
+      }
+      p.appendChild(document.createTextNode(morceaux[i]));
+    }
+    return p;
+  }
+
+  function titre(texte) {
+    var h2 = document.createElement("h2");
+    h2.textContent = texte;
+    return h2;
+  }
+
+  function afficher() {
+    var t = TEXTES[langue];
+    document.documentElement.lang = langue;
+    ecran.lang = langue;
+    ecran.textContent = "";
+
+    if (etat === "confirmation") {
+      ecran.appendChild(titre(t.titre));
+      ecran.appendChild(paragraphe(t.explication, "texte"));
+      var div = document.createElement("div");
+      div.className = "action";
+      var bouton = document.createElement("button");
+      bouton.type = "button";
+      bouton.className = "danger";
+      bouton.disabled = enCours;
+      bouton.textContent = enCours ? t.enCours : t.bouton;
+      bouton.addEventListener("click", verrouiller);
+      div.appendChild(bouton);
+      ecran.appendChild(div);
+      if (indisponible) ecran.appendChild(paragraphe(t.indisponible, "texte alerte"));
+    } else if (etat === "reussite") {
+      ecran.appendChild(titre(t.reussiteTitre));
+      ecran.appendChild(paragraphe(t.reussiteTexte, "texte"));
+    } else if (etat === "tropDeTentatives") {
+      ecran.appendChild(paragraphe(t.tropDeTentatives, "texte"));
+    } else {
+      ecran.appendChild(paragraphe(t.invalide, "texte"));
+    }
+
+    ecran.appendChild(paragraphe(t.rappel, "rappel"));
+
+    var boutons = nav.querySelectorAll("button");
+    for (var i = 0; i < boutons.length; i++) {
+      boutons[i].setAttribute("aria-pressed", boutons[i].getAttribute("data-lang") === langue ? "true" : "false");
+    }
+  }
+
+  async function verrouiller() {
+    if (enCours || !jeton) return;
+    enCours = true;
+    indisponible = false;
+    afficher();
+    var statut = 0;
+    var controleur = new AbortController();
+    var minuterie = setTimeout(function () { controleur.abort(); }, 15000);
+    try {
+      var reponse = await fetch("https://api.sabellin.com/api/auth/lock-account", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ token: jeton }),
+        credentials: "omit",
+        cache: "no-store",
+        signal: controleur.signal
+      });
+      statut = reponse.status;
+    } catch (e) {
+      statut = 0;
+    }
+    clearTimeout(minuterie);
+    enCours = false;
+    if (statut === 200) {
+      jeton = "";
+      etat = "reussite";
+    } else if (statut === 400) {
+      etat = "invalide";
+    } else if (statut === 429) {
+      etat = "tropDeTentatives";
+    } else {
+      indisponible = true;
+    }
+    afficher();
+  }
+
+  nav.addEventListener("click", function (e) {
+    var cible = e.target.closest("button[data-lang]");
+    if (!cible) return;
+    langue = cible.getAttribute("data-lang");
+    afficher();
+  });
+
+  nav.hidden = false;
+  afficher();
+})();
+</script>
+</body>
+</html>
