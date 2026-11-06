@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; font-src 'self'; base-uri 'none'; form-action 'none'">
+<title>Télécharger Sabellin</title>
+<style>
+  @font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 500; font-display: swap; src: url(/fonts/cormorant-garamond-latin-500-normal.woff2) format('woff2'); }
+  @font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 600; font-display: swap; src: url(/fonts/cormorant-garamond-latin-600-normal.woff2) format('woff2'); }
+  @font-face { font-family: 'Cormorant Garamond'; font-style: italic; font-weight: 500; font-display: swap; src: url(/fonts/cormorant-garamond-latin-500-italic.woff2) format('woff2'); }
+  @font-face { font-family: 'Jost'; font-style: normal; font-weight: 300; font-display: swap; src: url(/fonts/jost-latin-300-normal.woff2) format('woff2'); }
+  @font-face { font-family: 'Jost'; font-style: normal; font-weight: 400; font-display: swap; src: url(/fonts/jost-latin-400-normal.woff2) format('woff2'); }
+  @font-face { font-family: 'Jost'; font-style: normal; font-weight: 500; font-display: swap; src: url(/fonts/jost-latin-500-normal.woff2) format('woff2'); }
+  :root {
+    --ink: #1c1520;
+    --plum: #2e1f33;
+    --cream: #f6f1e9;
+    --rose: #c98a7d;
+    --rose-soft: #e3b8ae;
+    --muted: #a89aa8;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Jost', system-ui, sans-serif;
+    font-weight: 300;
+    background: radial-gradient(120% 140% at 50% 0%, var(--plum) 0%, var(--ink) 70%);
+    background-attachment: fixed;
+    color: var(--cream);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 3rem 1.5rem;
+  }
+  .mark {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.2rem, 9vw, 5.5rem);
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    line-height: 1.05;
+  }
+  .mark a { color: var(--cream); text-decoration: none; }
+  .mark .dot {
+    color: var(--rose);
+  }
+  .tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(1.25rem, 3.2vw, 1.7rem);
+    color: var(--rose-soft);
+    margin-top: 1.1rem;
+  }
+  .rule {
+    width: 56px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--rose), transparent);
+    margin: 2.2rem auto;
+  }
+  .choix { text-align: center; }
+  .choix label { display: block; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.32em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.6rem; }
+  .choix select { font-family: 'Jost', system-ui, sans-serif; font-size: 1rem; font-weight: 400; color: var(--cream); background: var(--ink); border: 1px solid var(--rose); padding: 0.5rem 0.8rem; max-width: 100%; cursor: pointer; }
+  .choix select:hover, .choix select:focus-visible { border-color: var(--rose-soft); }
+  section { margin-top: 3rem; max-width: 34rem; }
+  section[hidden] { display: none; }
+  h2 { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 1.7rem; line-height: 1.25; margin-bottom: 1.2rem; }
+  .texte { font-size: 1.05rem; line-height: 1.75; letter-spacing: 0.015em; color: #d9d0dc; margin-bottom: 0.9rem; }
+  footer {
+    padding: 2rem 1.5rem 2.4rem;
+    text-align: center;
+    font-size: 0.82rem;
+    font-weight: 300;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    line-height: 1.9;
+  }
+  footer .legal-name {
+    color: #cfc3d1;
+    font-weight: 400;
+  }
+</style>
+</head>
+<body>
+  <main>
+    <h1 class="mark"><a href="/">Sabellin<span class="dot">.</span></a></h1>
+    <p class="tagline">Meaningful connections, worldwide.</p>
+    <div class="rule" aria-hidden="true"></div>
+    <div class="choix" id="choix" hidden>
+      <label for="langue">Langue · Language</label>
+      <select id="langue">
+        <option value="fr" lang="fr">Français</option>
+        <option value="bg" lang="bg">Български</option>
+        <option value="cs" lang="cs">Čeština</option>
+        <option value="da" lang="da">Dansk</option>
+        <option value="de" lang="de">Deutsch</option>
+        <option value="et" lang="et">Eesti</option>
+        <option value="el" lang="el">Ελληνικά</option>
+        <option value="en" lang="en">English</option>
+        <option value="es" lang="es">Español</option>
+        <option value="ga" lang="ga">Gaeilge</option>
+        <option value="hr" lang="hr">Hrvatski</option>
+        <option value="is" lang="is">Íslenska</option>
+        <option value="it" lang="it">Italiano</option>
+        <option value="lv" lang="lv">Latviešu</option>
+        <option value="lt" lang="lt">Lietuvių</option>
+        <option value="hu" lang="hu">Magyar</option>
+        <option value="mt" lang="mt">Malti</option>
+        <option value="nl" lang="nl">Nederlands</option>
+        <option value="nb" lang="nb">Norsk (bokmål)</option>
+        <option value="pl" lang="pl">Polski</option>
+        <option value="pt-PT" lang="pt-PT">Português (Portugal)</option>
+        <option value="pt-BR" lang="pt-BR">Português (Brasil)</option>
+        <option value="ro" lang="ro">Română</option>
+        <option value="sk" lang="sk">Slovenčina</option>
+        <option value="sl" lang="sl">Slovenščina</option>
+        <option value="fi" lang="fi">Suomi</option>
+        <option value="sv" lang="sv">Svenska</option>
+      </select>
+    </div>
+
+    <section id="fr" lang="fr" data-titre="Télécharger Sabellin">
+      <h2>L’application arrive bientôt</h2>
+      <p class="texte">Sabellin sera bientôt disponible sur l’App Store et sur Google Play.</p>
+      <p class="texte">Si l’application est déjà installée sur votre téléphone, ouvrez-la directement.</p>
+    </section>
+
+    <section id="bg" lang="bg" data-titre="Изтеглете Sabellin">
+      <h2>Приложението идва скоро</h2>
+      <p class="texte">Sabellin скоро ще бъде достъпно в App Store и Google Play.</p>
+      <p class="texte">Ако приложението вече е инсталирано на телефона ви, отворете го директно.</p>
+    </section>
+
+    <section id="cs" lang="cs" data-titre="Stáhnout Sabellin">
+      <h2>Aplikace již brzy</h2>
+      <p class="texte">Sabellin bude brzy k dispozici v App Store a na Google Play.</p>
+      <p class="texte">Pokud už máte aplikaci v telefonu nainstalovanou, otevřete ji přímo.</p>
+    </section>
+
+    <section id="da" lang="da" data-titre="Download Sabellin">
+      <h2>Appen kommer snart</h2>
+      <p class="texte">Sabellin bliver snart tilgængelig i App Store og på Google Play.</p>
+      <p class="texte">Hvis appen allerede er installeret på din telefon, kan du åbne den direkte.</p>
+    </section>
+
+    <section id="de" lang="de" data-titre="Sabellin herunterladen">
+      <h2>Die App kommt bald</h2>
+      <p class="texte">Sabellin ist bald im App Store und bei Google Play verfügbar.</p>
+      <p class="texte">Wenn die App bereits auf Ihrem Telefon installiert ist, öffnen Sie sie direkt.</p>
+    </section>
+
+    <section id="et" lang="et" data-titre="Laadige alla Sabellin">
+      <h2>Rakendus tuleb peagi</h2>
+      <p class="texte">Sabellin on peagi saadaval App Store’is ja Google Plays.</p>
+      <p class="texte">Kui rakendus on teie telefoni juba installitud, avage see otse.</p>
+    </section>
+
+    <section id="el" lang="el" data-titre="Κατεβάστε το Sabellin">
+      <h2>Η εφαρμογή έρχεται σύντομα</h2>
+      <p class="texte">Το Sabellin θα είναι σύντομα διαθέσιμο στο App Store και στο Google Play.</p>
+      <p class="texte">Αν η εφαρμογή είναι ήδη εγκατεστημένη στο τηλέφωνό σας, ανοίξτε την απευθείας.</p>
+    </section>
+
+    <section id="en" lang="en" data-titre="Download Sabellin">
+      <h2>The app is coming soon</h2>
+      <p class="texte">Sabellin will soon be available on the App Store and Google Play.</p>
+      <p class="texte">If the app is already installed on your phone, open it directly.</p>
+    </section>
+
+    <section id="es" lang="es" data-titre="Descargar Sabellin">
+      <h2>La aplicación llegará pronto</h2>
+      <p class="texte">Sabellin estará disponible próximamente en el App Store y en Google Play.</p>
+      <p class="texte">Si la aplicación ya está instalada en tu teléfono, ábrela directamente.</p>
+    </section>
+
+    <section id="ga" lang="ga" data-titre="Íoslódáil Sabellin">
+      <h2>Tá an aip ag teacht go luath</h2>
+      <p class="texte">Beidh Sabellin ar fáil go luath ar an App Store agus ar Google Play.</p>
+      <p class="texte">Má tá an aip suiteáilte ar do ghuthán cheana féin, oscail go díreach í.</p>
+    </section>
+
+    <section id="hr" lang="hr" data-titre="Preuzmite Sabellin">
+      <h2>Aplikacija uskoro stiže</h2>
+      <p class="texte">Sabellin će uskoro biti dostupan na App Storeu i Google Playu.</p>
+      <p class="texte">Ako je aplikacija već instalirana na vašem telefonu, otvorite je izravno.</p>
+    </section>
+
+    <section id="is" lang="is" data-titre="Sækja Sabellin">
+      <h2>Appið kemur bráðum</h2>
+      <p class="texte">Sabellin verður brátt fáanlegt í App Store og á Google Play.</p>
+      <p class="texte">Ef appið er þegar uppsett í símanum þínum skaltu opna það beint.</p>
+    </section>
+
+    <section id="it" lang="it" data-titre="Scarica Sabellin">
+      <h2>L’app arriva presto</h2>
+      <p class="texte">Sabellin sarà presto disponibile su App Store e su Google Play.</p>
+      <p class="texte">Se l’app è già installata sul tuo telefono, aprila direttamente.</p>
+    </section>
+
+    <section id="lv" lang="lv" data-titre="Lejupielādēt Sabellin">
+      <h2>Lietotne drīzumā būs pieejama</h2>
+      <p class="texte">Sabellin drīzumā būs pieejams App Store un Google Play.</p>
+      <p class="texte">Ja lietotne jau ir instalēta jūsu tālrunī, atveriet to tieši.</p>
+    </section>
+
+    <section id="lt" lang="lt" data-titre="Atsisiųsti Sabellin">
+      <h2>Programėlė jau netrukus</h2>
+      <p class="texte">Sabellin netrukus bus galima atsisiųsti iš App Store ir Google Play.</p>
+      <p class="texte">Jei programėlė jau įdiegta jūsų telefone, atidarykite ją tiesiogiai.</p>
+    </section>
+
+    <section id="hu" lang="hu" data-titre="Sabellin letöltése">
+      <h2>Hamarosan érkezik az alkalmazás</h2>
+      <p class="texte">A Sabellin hamarosan elérhető lesz az App Store-ban és a Google Playen.</p>
+      <p class="texte">Ha az alkalmazás már telepítve van a telefonján, nyissa meg közvetlenül.</p>
+    </section>
+
+    <section id="mt" lang="mt" data-titre="Niżżel Sabellin">
+      <h2>L-applikazzjoni ġejja dalwaqt</h2>
+      <p class="texte">Sabellin se jkun disponibbli dalwaqt fuq l-App Store u fuq Google Play.</p>
+      <p class="texte">Jekk l-applikazzjoni diġà installata fuq it-telefon tiegħek, iftaħha direttament.</p>
+    </section>
+
+    <section id="nl" lang="nl" data-titre="Sabellin downloaden">
+      <h2>De app komt binnenkort</h2>
+      <p class="texte">Sabellin is binnenkort beschikbaar in de App Store en op Google Play.</p>
+      <p class="texte">Is de app al op je telefoon geïnstalleerd, open hem dan direct.</p>
+    </section>
+
+    <section id="nb" lang="nb" data-titre="Last ned Sabellin">
+      <h2>Appen kommer snart</h2>
+      <p class="texte">Sabellin blir snart tilgjengelig i App Store og på Google Play.</p>
+      <p class="texte">Hvis appen allerede er installert på telefonen din, kan du åpne den direkte.</p>
+    </section>
+
+    <section id="pl" lang="pl" data-titre="Pobierz Sabellin">
+      <h2>Aplikacja już wkrótce</h2>
+      <p class="texte">Sabellin będzie wkrótce dostępny w App Store i w Google Play.</p>
+      <p class="texte">Jeśli aplikacja jest już zainstalowana na Twoim telefonie, otwórz ją bezpośrednio.</p>
+    </section>
+
+    <section id="pt-PT" lang="pt-PT" data-titre="Transferir o Sabellin">
+      <h2>A aplicação chega em breve</h2>
+      <p class="texte">O Sabellin estará em breve disponível na App Store e no Google Play.</p>
+      <p class="texte">Se a aplicação já estiver instalada no seu telemóvel, abra-a diretamente.</p>
+    </section>
+
+    <section id="pt-BR" lang="pt-BR" data-titre="Baixar o Sabellin">
+      <h2>O aplicativo chega em breve</h2>
+      <p class="texte">O Sabellin estará disponível em breve na App Store e no Google Play.</p>
+      <p class="texte">Se o aplicativo já estiver instalado no seu celular, abra-o diretamente.</p>
+    </section>
+
+    <section id="ro" lang="ro" data-titre="Descărcați Sabellin">
+      <h2>Aplicația vine în curând</h2>
+      <p class="texte">Sabellin va fi disponibilă în curând în App Store și pe Google Play.</p>
+      <p class="texte">Dacă aplicația este deja instalată pe telefonul dumneavoastră, deschideți-o direct.</p>
+    </section>
+
+    <section id="sk" lang="sk" data-titre="Stiahnuť Sabellin">
+      <h2>Aplikácia už čoskoro</h2>
+      <p class="texte">Sabellin bude čoskoro dostupný v App Store a na Google Play.</p>
+      <p class="texte">Ak už máte aplikáciu v telefóne nainštalovanú, otvorte ju priamo.</p>
+    </section>
+
+    <section id="sl" lang="sl" data-titre="Prenesite Sabellin">
+      <h2>Aplikacija prihaja kmalu</h2>
+      <p class="texte">Sabellin bo kmalu na voljo v trgovinah App Store in Google Play.</p>
+      <p class="texte">Če je aplikacija že nameščena v vašem telefonu, jo odprite neposredno.</p>
+    </section>
+
+    <section id="fi" lang="fi" data-titre="Lataa Sabellin">
+      <h2>Sovellus on tulossa pian</h2>
+      <p class="texte">Sabellin on pian saatavilla App Storesta ja Google Playsta.</p>
+      <p class="texte">Jos sovellus on jo asennettu puhelimeesi, avaa se suoraan.</p>
+    </section>
+
+    <section id="sv" lang="sv" data-titre="Ladda ned Sabellin">
+      <h2>Appen kommer snart</h2>
+      <p class="texte">Sabellin blir snart tillgänglig i App Store och på Google Play.</p>
+      <p class="texte">Om appen redan är installerad på din telefon kan du öppna den direkt.</p>
+    </section>
+
+  </main>
+  <footer>
+    <span class="legal-name">&copy; 2026 Sabellin, LLC</span><br>
+    1111B South Governors Ave, STE 91897, Dover, DE 19904, United States<br>
+    Privacy inquiries: privacy@sabellin.com
+  </footer>
+<script>
+(function () {
+  "use strict";
+
+  var choix = document.getElementById("choix");
+  var menu = document.getElementById("langue");
+  var sections = document.querySelectorAll("main section[lang]");
+  var codes = [];
+  for (var i = 0; i < sections.length; i++) codes.push(sections[i].id);
+
+  // Code de la liste correspondant a une etiquette de langue, ou "".
+  // Comparaison exacte (sans tenir compte de la casse), puis sur la langue seule.
+  function trouver(etiquette) {
+    if (typeof etiquette !== "string" || !etiquette) return "";
+    var bas = etiquette.toLowerCase();
+    for (var i = 0; i < codes.length; i++) {
+      if (codes[i].toLowerCase() === bas) return codes[i];
+    }
+    var seule = bas.split("-")[0];
+    if (seule === "pt") return "pt-PT";
+    if (seule === "no" || seule === "nn") return "nb";
+    for (var j = 0; j < codes.length; j++) {
+      if (codes[j].toLowerCase() === seule) return codes[j];
+    }
+    return "";
+  }
+
+  function langueInitiale() {
+    var code = trouver(location.hash.slice(1));
+    if (code) return code;
+    var preferees = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language];
+    for (var i = 0; i < preferees.length; i++) {
+      code = trouver(preferees[i]);
+      if (code) return code;
+    }
+    return "en";
+  }
+
+  function afficher(code) {
+    for (var i = 0; i < sections.length; i++) {
+      sections[i].hidden = sections[i].id !== code;
+    }
+    var section = document.getElementById(code);
+    document.documentElement.lang = code;
+    document.title = section.getAttribute("data-titre");
+    menu.value = code;
+  }
+
+  menu.addEventListener("change", function () {
+    var code = trouver(menu.value);
+    if (!code) return;
+    afficher(code);
+    history.replaceState(null, "", location.pathname + location.search + "#" + code);
+  });
+
+  afficher(langueInitiale());
+  choix.hidden = false;
+})();
+</script>
+</body>
+</html>
